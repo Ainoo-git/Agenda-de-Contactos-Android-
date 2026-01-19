@@ -40,7 +40,7 @@ Room (DAO + Database)
 
 ---
 
-## 📂 Estructura del proyecto
+## Estructura del proyecto
 
 app/src/main/java/com/example/agendacontacto/
 ├─ data/
@@ -86,10 +86,3 @@ Este proyecto se distribuye bajo la licencia MIT.
 
 ---
 
-### 🔥 Siguiente paso recomendado
-Si quieres, en el próximo mensaje puedo:
-- ayudarte a **crear el repositorio paso a paso**
-- escribir **commits profesionales**
-- o mejorar el README para **nivel sobresaliente** (con badges, screenshots, etc.)
-
-Tú mandas 😎
