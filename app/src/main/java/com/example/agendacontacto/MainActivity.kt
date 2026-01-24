@@ -12,13 +12,14 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.agendacontacto.ui.theme.AgendaContactosTheme
+import com.example.agendacontacto.ui.theme.AgendaContactoTheme
+import com.example.agendacontacto.ui.theme.AgendaContactoTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AgendaContactosTheme {
+            AgendaContactoTheme {
                 ContactListScreen()
             }
         }
