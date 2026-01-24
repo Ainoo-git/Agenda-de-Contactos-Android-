@@ -43,36 +43,37 @@ Room (DAO + Database)
 ## Estructura del proyecto
 
 app/src/main/java/com/example/agendacontacto/
-├─ data/
-│ ├─ Contact.kt
-│ ├─ ContactDao.kt
-│ └─ AppDatabase.kt
-├─ ContactViewModel.kt
-└─ MainActivity.kt
+├── dao/
+│ └── ContactDao.kt
+├── data/
+│ └── ContactEntity.kt
+├── domain/
+│ └── Contact.kt
+├── repositories/
+│ └── ContactRepository.kt
+├── ContactViewModel.kt
+└── MainActivity.kt
 
 ---
 
 ## Cómo ejecutar el proyecto
 
+
+---
+
+## ▶️ Cómo ejecutar el proyecto
+
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/agenda-contactos.git
-Abre el proyecto en Android Studio
-
-Espera a que Gradle termine de sincronizar
-
-Ejecuta la app en un emulador o dispositivo físico
+   git clone https://github.com/Ainoo-git/Agenda-de-Contactos-Android-.git
 
  ---
+ 
 ## Funcionamiento
 Introduce un nombre y un teléfono
-
 Pulsa Guardar
-
 El contacto aparece en la lista
-
 Pulsa sobre un contacto para eliminarlo
-
 Al cerrar y abrir la app, los contactos siguen guardados
 
 ---
@@ -86,4 +87,3 @@ Este proyecto se distribuye bajo la licencia MIT.
 
 ---
 
-# AgendaContactos
