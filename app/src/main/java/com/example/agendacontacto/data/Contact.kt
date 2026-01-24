@@ -1,9 +1,7 @@
-package com.example.agendacontacto.data
-
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "contacts")
 data class Contact(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
