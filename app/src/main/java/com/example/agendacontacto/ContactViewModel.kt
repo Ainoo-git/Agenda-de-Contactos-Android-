@@ -1,7 +1,9 @@
 package com.example.agendacontacto
 
 import android.app.Application
+import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.agendacontacto.domain.Contact
 import com.example.agendacontacto.repositories.ContactRepository
@@ -9,23 +11,23 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
-class ContactViewModel(application: Application) : AndroidViewModel(application) {
+class ContactViewModel : ViewModel() {
 
-    private val dao = AppDatabase.getDatabase(application).contactDao()
-    private val repository = ContactRepository(dao)
+    private val _contacts = mutableStateListOf<Contact>()
+    val contacts: List<Contact> = _contacts
 
-    val contacts = repository
-        .getAllContacts()
-        .stateIn(
-            viewModelScope,
-            SharingStarted.WhileSubscribed(5_000),
-            emptyList()
+    fun addContact(name: String, phone: String) {
+        _contacts.add(
+            Contact(
+                id = _contacts.size,
+                name = name,
+                phone = phone
+            )
         )
+    }
 
-    init {
-        viewModelScope.launch {
-            repository.insert(Contact(name = "Juan", phone = "123456"))
-            repository.insert(Contact(name = "Pablo", phone = "987654"))
-        }
+    fun getContactById(id: Int): Contact? {
+        return _contacts.find { it.id == id }
     }
 }
+
